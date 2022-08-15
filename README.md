@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here]()
+- Solution URL: [solution URL here](https://www.frontendmentor.io/solutions/single-price-grid-component-using-html-and-css-XtlHfkJ_zT)
 - Live Site URL: [live site URL here](https://single-price-grid-component-solution-blond.vercel.app/)
 
 ## My process
