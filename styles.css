@@ -1,0 +1,193 @@
+/* Karla google fonts - by Jonny Pinhorn */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+/************/
+
+/* variables */
+:root {
+	--cyan-clr: hsl(179, 62%, 43%);
+	--lighter-cyan-clr: hsl(179, 62%, 45%);
+	--bright-yellow-clr: hsl(71, 73%, 54%);
+	--light-gray-clr: hsl(204, 43%, 93%);
+	--dark-gray-clr: hsl(213, 20%, 82%);
+	--grayish-blue-clr: hsl(218, 22%, 67%);
+	--footer-bg-clr: hsl(217, 42%, 56%);
+	--base-font-size: 16;
+	--karla-font-family: 'Karla', sans-serif;
+}
+/************/
+
+/* resets */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	font-size: var(--base-font-size);
+	font-family: var(--karla-font-family);
+}
+
+/************/
+
+/* body */
+body {
+	background: var(--grayish-blue-clr);
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+/************/
+
+/* card */
+.card {
+	display: grid;
+	grid-template-areas:
+		'card-top card-top'
+		'card-left card-right';
+	/* I was having issue setting the border-radius, but after adding overflow hidden it worked. idk why */
+	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+/************/
+
+/* card top, card left and card right shared styles*/
+.card--top,
+.card--left,
+.card--right {
+	padding: 2.5rem;
+}
+
+.card--top .card--top-title,
+.card--top .card--top-sub-title,
+.card--left .card--left-title,
+.card--right .card--right-title {
+	padding: 1rem 0;
+}
+/************/
+
+/* card top */
+.card--top {
+	grid-area: card-top;
+	background: var(--light-gray-clr);
+}
+
+.card--top-title {
+	color: var(--lighter-cyan-clr);
+}
+
+.card--top-sub-title {
+	color: var(--bright-yellow-clr);
+}
+
+.card--top-text {
+	padding: 0.2rem 0;
+	color: var(--grayish-blue-clr);
+}
+/************/
+
+/* card left */
+.card--left {
+	grid-area: card-left;
+	background: var(--cyan-clr);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	color: #fff;
+}
+
+.card--left-price-tag {
+	color: var(--dark-gray-clr);
+	display: flex;
+	align-items: center;
+}
+
+.card--left-price-tag span {
+	font-size: 2rem;
+	color: #fff;
+	margin-right: 0.5rem;
+}
+
+.card--left-text {
+	color: var(--dark-gray-clr);
+}
+/************/
+
+/* card right */
+.card--right {
+	grid-area: card-right;
+	background: var(--lighter-cyan-clr);
+}
+
+.card--right-title {
+	color: #fff;
+}
+
+.card--right-text {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0.2rem;
+}
+
+.card--right-text span {
+	color: var(--dark-gray-clr);
+}
+/************/
+
+/* btn */
+.btn {
+	background: var(--bright-yellow-clr);
+	padding: 1rem;
+	margin-top: 2rem;
+	text-align: center;
+	display: block;
+	color: #fff;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+/************/
+
+/* footer */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background: var(--footer-bg-clr);
+	width: 100%;
+	text-align: center;
+	color: var(--dark-gray-clr);
+}
+
+footer a {
+	color: var(--bright-yellow-clr);
+	margin-left: 0.2rem;
+}
+/************/
+
+/* media queries */
+@media screen and (max-width: 768px) {
+	body {
+		height: auto;
+	}
+	.card {
+		grid-template-areas:
+			'card-top'
+			'card-left'
+			'card-right';
+		margin: 1rem;
+	}
+
+	footer {
+		position: static;
+	}
+}
+
+/************/
